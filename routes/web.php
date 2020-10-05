@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DroneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/drones', [droneController::class, 'list']);
+Route::get('/drones', [DroneController::class, 'list']);
 
-Route::post('/drones', [droneController::class, 'insert']);
+Route::post('/drones', [DroneController::class, 'insert']);
 
-Route::put('/drones/{id}', [droneController::class, 'update']);
+Route::put('/drones/{id}', [DroneController::class, 'update']);
 
-Route::delete('/drones/{id}', [droneController::class, 'delete']);
+Route::delete('/drones/{id}', [DroneController::class, 'delete']);
 
-Route::get('/drones{id}', [droneController::class, 'create']);
+Route::get('/drones{id}', [DroneController::class, 'create']);
 
-Route::get('/drones?_page=7&_limit=20', [droneController::class, 'paginate']);
+Route::get('/drones?_page=7&_limit=20', [DroneController::class, 'paginate']);
 
-Route::get('/drones?_sort=id&_order=asc', [droneController::class, 'sort']);
+Route::get('/drones?_sort=id&_order=asc', [DroneController::class, 'sort']);
 
-Route::get('/drones?name=daniel&status=fail', [droneController::class, 'filter']);
+Route::get('/drones?name=daniel&status=fail', [DroneController::class, 'filter']);

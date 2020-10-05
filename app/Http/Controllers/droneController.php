@@ -5,22 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\Drones;
 use Illuminate\Http\Request;
 
-class droneController extends Controller
- {
-    protected $drones;
- 
-    public function __construct(Pessoa $drones) {
-    
-    $this->drones = $drones;
- }
+         class DroneController extends Controller
+          {
 
-}
+           protected $drones;
+ 
+           public function __construct(Drones $drones) {
+    
+           $this->drones = $drones;
+          
+          }
+
+
+        
 
             public function list() {
  
             $drones = $this->drones->all();
  
-            return view('drones', ['drones' => $drones]);
+            return view('drones.drones', $drones);
             
             }
 
@@ -59,3 +62,5 @@ class droneController extends Controller
             public function filter(){
  	
             }
+
+      }
