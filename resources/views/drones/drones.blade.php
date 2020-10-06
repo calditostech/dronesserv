@@ -26,7 +26,7 @@
          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="background-color: #afeeee; width: 180px; border-radius: 30px;color: #0000cd;">
             Select
          </button>
-     <div class="dropdown-menu-current" aria-labelledby="dropdownMenuButton">
+     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
@@ -35,10 +35,10 @@
 
      <div class="dropdown-status">
      	  <label for="basic-url" class="label-status"><b>Status</b></label>
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="background-color: #afeeee; width: 180px; border-radius: 30px;color: #0000cd;">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style="background-color: #afeeee; width: 180px; border-radius: 30px;color: #0000cd;">
           Select
          </button>
-          <div class="dropdown-menu-status" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                <a class="dropdown-item" href="#">Action</a>
                <a class="dropdown-item" href="#">Another action</a>
                <a class="dropdown-item" href="#">Something else here</a>
@@ -67,21 +67,16 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      @foreach($drones as $drone)
+      <th scope="row">{{$drone->id}}</th>
+      <td>{{$drone->name}}</td>
+      <td>{{$drone->image}}</td>
+      <td>{{$drone->address}}</td>
+      <td>{{$drone->battery}}</td>
+      <td>{{$drone->max_speed}}</td>
+      <td>{{$drone->average_speed}}</td>
+      <td>{{$drone->status}}</td>
+     @endforeach
     </tr>
   </tbody>
 </table>

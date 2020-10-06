@@ -20,10 +20,10 @@ use Illuminate\Http\Request;
         
 
             public function list() {
+
+            $drones = Drones::all();
  
-            $drones = $this->drones->all();
- 
-            return view('drones.drones', $drones);
+            return view('drones.drones', ['drones' => $drones]);
             
             }
 
