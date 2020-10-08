@@ -3,74 +3,32 @@
 	padding: 10px;
 }
 
-.container {
-	margin-top: 130px;
-}
-
-.label-drone{
-	margin-top: -50px;
-	margin-left: 60px;
-    color: #0000cd;
-}
-
-.label-name{
-	margin-top: -110px;
-	margin-left: 300px;
-	color: #0000cd;
-}
-
-.label-current{
-	margin-top: -30px;
-	margin-left: 30px;
-	color: #0000cd;
-}
-
-.label-status{
-	margin-top: -140px;
-	margin-left: 50px;
-	color: #0000cd;
-}
-
-.form-control-drone {
-	border-radius: 15px;
-	width: 120px;
-	height: 40px;
-	margin-left: -90px;
-	margin-top: -5px;
+body{
 	background-color: #afeeee;
-	color: #0000cd;
 }
 
-.form-control-name {
-	border-radius: 15px;
-	width: 220px;
-	height: 40px;
-	margin-left: -65px;
-	margin-top: -65px;
-	background-color: #afeeee;
-	color: #0000cd;
+label{
+	color: blue;
 }
 
-.dropdown-current {
-	border-radius: 15px;
-	width: 250px;
-	height: 50px;
-	margin-left: 580px;
-	margin-top: -132px;
-}
+.form-control{
 
-.dropdown-status {
-	border-radius: 15px;
-	width: 220px;
-	height: 50px;
-	margin-left: 810px;
-	margin-top: -60px;
 }
 
 thead{
-	color: #afeeee;
+	color: white;
 }
 
-.dropdown-menu{
-	cursor: pointer;
+.dropdown-menu {
+	background-color: #afeeee;
+}
+
+td{
+	background-color: white;
+	color: #4682B4;
+}
+
+table{
+	color: white;
+	border: solid 5px white;
 }

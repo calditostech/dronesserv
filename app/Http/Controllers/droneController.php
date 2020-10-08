@@ -17,8 +17,6 @@ use Illuminate\Http\Request;
           }
 
 
-        
-
             public function list() {
 
             $drones = Drones::all();
@@ -28,11 +26,25 @@ use Illuminate\Http\Request;
             }
 
 
-            public function insert(){
+            public function insert(Request $request, Drones $drones){
              
+             $drones = new Drones();
+             $drones->drone = Input::get('id'); 
+             $drones->name = Input::get('name'); 
+             $drones->image = Input::get('image'); 
+             $drones->address = Input::get('address'); 
+             $drones->battery = Input::get('battery'); 
+             $drones->max_speed = Input::get('max_speed'); 
+             $drones->average_speed = Input::get('average_speed'); 
+             $drones->status = Input::get('status'); 
+
+             $drones->save();
+
+             $mensagem = "Drone inserido com sucesso";
+
+             return view('drones.insert', ['drones' => $drones]);
 
             }
-
 
             public function update(){
  	
@@ -46,11 +58,25 @@ use Illuminate\Http\Request;
 
             public function create(){
  	
+              return view('drones.drones.create');
+
             }
 
 
             public function paginate(){
- 	
+ 	              
+             $drones = $drones->create($request->all());
+
+
+              if ($drones)
+             return redirect()
+                    ->route('drones.index')
+                    ->with('success', 'Categoria inserida com sucesso!');
+ 
+    
+             return redirect()
+                ->back()
+                ->with('error', 'Falha ao inserir');
             }
 
 
@@ -61,6 +87,14 @@ use Illuminate\Http\Request;
 
             public function filter(){
  	
+             $drones = Drones::all();
+            foreach ($drones as $drone){
+            echo $drones->drone . "<br>";
+
+
+            return view('drones.filter');
+}
+        }  
             }
 
-      }
+      
