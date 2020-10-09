@@ -17,7 +17,7 @@ use App\Http\Controllers\DroneController;
 
 Route::get('/drones', [DroneController::class, 'list']);
 
-Route::post('/drones', [DroneController::class, 'insert']);
+Route::post('/drones/', [DroneController::class, 'insert']);
 
 Route::put('/drones/{id}', [DroneController::class, 'update']);
 

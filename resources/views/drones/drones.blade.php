@@ -26,7 +26,7 @@
       @if(!empty($mensagem))
             <div class="alert alert-success">Drone inserido com sucesso!</div>
         @endif
-     <form method="post" action="drones/drones">
+     <form action="/drones" method="post">
   <div class="row alert alert-success">
     <div class="col-md-2">
        <label for="inputState"><b>Drone ID</b></label>

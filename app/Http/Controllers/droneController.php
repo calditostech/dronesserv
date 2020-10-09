@@ -26,23 +26,21 @@ use Illuminate\Http\Request;
             }
 
 
-            public function insert(Request $request, Drones $drones){
+            public function insert(Request $request) {
              
-             $drones = new Drones();
-             $drones->drone = Input::get('id'); 
-             $drones->name = Input::get('name'); 
-             $drones->image = Input::get('image'); 
-             $drones->address = Input::get('address'); 
-             $drones->battery = Input::get('battery'); 
-             $drones->max_speed = Input::get('max_speed'); 
-             $drones->average_speed = Input::get('average_speed'); 
-             $drones->status = Input::get('status'); 
+             $drones = new Drones;
+
+             $drones->id = $request->id;
+             $drones->name = $request->name;
+             $drones->image = $request->image;
+             $drones->address = $request->address;
+             $drones->battery = $request->battery;
+             $drones->max_speed = $request->max_speed;
+             $drones->average_speed = $request->average_speed;
+             $drones->status = $request->status;
+
 
              $drones->save();
-
-             $mensagem = "Drone inserido com sucesso";
-
-             return view('drones.insert', ['drones' => $drones]);
 
             }
 
@@ -58,6 +56,22 @@ use Illuminate\Http\Request;
 
             public function create(){
  	
+                $drones = $this->drones->create([
+                   'id'              => '2',
+                   'name'            => 'calditos88',
+                   'image'           => 'cal88',
+                   'address'         => 'aurora street',
+                   'battery'         => 100,
+                   'max_speed'       => 300,
+                   'average_speed'   => 'ativo',
+                   'status'          => true,
+             ]);
+
+              if($drones)
+                return "Inserido com Sucesso";
+              else
+                return "Falha ao inserir";
+
               return view('drones.drones.create');
 
             }
