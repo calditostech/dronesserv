@@ -26,15 +26,16 @@
       @if(!empty($mensagem))
             <div class="alert alert-success">Drone inserido com sucesso!</div>
         @endif
-     <form action="/drones" method="post">
+     <form action="{{route('drones.insert')}}" method="post">
+      @csrf
   <div class="row alert alert-success">
     <div class="col-md-2">
        <label for="inputState"><b>Drone ID</b></label>
-      <input type="text" class="form-control" placeholder="Id Drone">
+      <input type="text" class="form-control" placeholder="Id Drone" name="drone" required>
     </div>
     <div class="col-md-2">
        <label for="inputState"><b>Name</b></label>
-      <input type="text" class="form-control" placeholder="Name">
+      <input type="text" class="form-control" placeholder="Name" name="name" required>
     </div>
     <div class="form-group col-md-3">
       <label for="inputState"><b>Current Fly</b></label>

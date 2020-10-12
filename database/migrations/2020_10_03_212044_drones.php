@@ -12,12 +12,8 @@ class Drones extends Migration
         Schema::create('drones', function (Blueprint $table){
          $table->increments('id');
          $table->string('name');
-         $table->string('image');
-         $table->string('address');
-         $table->string('battery');
-         $table->float('max_speed');
-         $table->float('average_speed');
-         $table->boolean('status');
+         $table->string('current_fly');
+         $table->string('status');
          $table->timestamps();
        });
 

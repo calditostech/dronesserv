@@ -17,11 +17,11 @@ use App\Http\Controllers\DroneController;
 
 Route::get('/drones', [DroneController::class, 'list']);
 
-Route::post('/drones/', [DroneController::class, 'insert']);
+Route::post('/drones/', [DroneController::class, 'insert'])->name('drones.insert');
 
-Route::put('/drones/{id}', [DroneController::class, 'update']);
+Route::put('/drones/{id}', [DroneController::class, 'update'])->name('drones.update');
 
-Route::delete('/drones/{id}', [DroneController::class, 'delete']);
+Route::delete('/drones/{id}', [DroneController::class, 'delete'])->name('drones.delete');
 
 Route::get('/drones{id}', [DroneController::class, 'create']);
 
